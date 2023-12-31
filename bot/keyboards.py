@@ -20,5 +20,3 @@ def get_years_keyboard():
     ]
     return ReplyKeyboardMarkup(keyboard)
 
-# ... Define other keyboards as needed
-
