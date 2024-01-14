@@ -24,7 +24,7 @@ def handle_choosing_year(update, context):
     department = context.user_data['department']
 
     # Connect to MongoDB
-    client = MongoClient(DATABASE_URL)
+    client = MongoClient(DATABASE_UR)
     db = client['question_papers']
     papers_collection = db['papers']
 
