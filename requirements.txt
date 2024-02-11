@@ -1,3 +1,3 @@
 python-telegram-bot
-pymongo  # Example for MongoDB
-google-cloud-firestore  # Example for Firestore
+pymongo
+google-cloud-firestore
