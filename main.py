@@ -1,19 +1,19 @@
-import logging
-from telegram import Update
-from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
+from dotenv import load_dotenv
+import os
+from bot.bot import main as start_bot
 
-logging.basicConfig(
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    level=logging.INFO
-)
+# Load environment variables from .env file
+load_dotenv()
 
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await context.bot.send_message(chat_id=update.effective_chat.id, text="I'm a bot, please talk to me!")
+# Get Telegram bot token from environment variable
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
-if __name__ == '__main__':
-    application = ApplicationBuilder().token('TOKEN').build()
-    
-    start_handler = CommandHandler('start', start)
-    application.add_handler(start_handler)
-    
-    application.run_polling()
+def main():
+    if TOKEN is None:
+        print("Please provide the Telegram bot token in the .env file.")
+        return
+
+    start_bot(TOKEN)
+
+if __name__ == "__main__":
+    main()
