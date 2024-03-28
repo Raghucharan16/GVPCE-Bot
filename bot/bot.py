@@ -37,7 +37,7 @@ def branch(update: Update, context: CallbackContext) -> None:
 # Function to create keyboard with branch options
 def branch_keyboard():
     # Define the options for branch selection
-    branches = ["Computer Science", "Electrical Engineering", "Mechanical Engineering", "Civil Engineering"]
+    branches = ["CSE", "EEE", "Mechanical", "Civil","ECE","CSE-AIML","CSE-DS"]
     keyboard = [[branch] for branch in branches]
 
     # Return ReplyKeyboardMarkup object
